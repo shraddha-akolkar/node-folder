@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post('/add-todo', authenticate, addTodo);
 router.get('/all-todos', authenticate, getAllTodos);
+
 router.get('/:id', authenticate, gettTodos);
 router.put('/:id', authenticate, updateTodo);
 router.delete('/:id', authenticate, deleteTodo);

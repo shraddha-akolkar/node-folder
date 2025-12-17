@@ -98,7 +98,7 @@ exports.login = async (req, res) => {
 // jwt verify-no - response 400  return
 // next()
 // 
-exports.authenticate = (req, res, next) => {
+const authenticate = (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
 
@@ -120,3 +120,5 @@ exports.authenticate = (req, res, next) => {
     });
   }
 };
+
+exports.authenticate = authenticate;
