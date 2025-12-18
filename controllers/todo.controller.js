@@ -10,7 +10,7 @@ exports.addTodo = async (req, res) => {
     });
 
     await newTodo.save();
-    res.status(201).json({ message: "Todo added successfully" });
+    res.status(201).json({ message: "Yeyyyyyyy!!! Todo added successfully" });
   } catch (error) {
     res.status(400).json({ message: "Something went wrong" });
   }
@@ -35,7 +35,7 @@ exports.gettTodos = async (req, res) => {
     });
 
     if (!todo) {
-      return res.status(404).json({ message: "Todo not found" });
+      return res.status(404).json({ message: "Ohhhhhh Noooooo!!!Todo not found" });
     }
 
     res.status(200).json(todo);
@@ -48,11 +48,11 @@ exports.gettTodos = async (req, res) => {
 exports.updateTodo = async (req, res) => {
   try {
     const result = await Todo.updateOne(
-      { _id: req.params.id, userId: req.user._id },
+      { _id: req.params.id },
       { $set: req.body }
     );
 
-    res.status(200).json({ message: "Todo updated", result });
+    res.status(200).json({ message: "Yeyyyyy!!! Todo updated Sucessfully", result });
   } catch (error) {
     res.status(400).json({ message: "Something went wrong" });
   }
@@ -64,7 +64,7 @@ exports.deleteTodo = async (req, res) => {
     const result = await Todo.deleteOne({
   _id: req.params.id
 });
-    res.status(200).json({ message: "Todo deleted", result });
+    res.status(200).json({ message: "Yeyyyy!!! Todo deleted Sucessfully", result });
   } catch (error) {
     res.status(400).json({ message: "Something went wrong" });
   }
