@@ -20,9 +20,9 @@ exports.addTodo = async (req, res) => {
 exports.getAllTodos = async (req, res) => {
   try {
     const todos = await Todo.find();
-    res.status(200).json(todos);
+   return res.status(200).json(todos);
   } catch (error) {
-    res.status(400).json({ message: "Something went wrong" });
+   return res.status(400).json({ message: "Something went wrong" });
   }
 };
 
@@ -40,7 +40,7 @@ exports.gettTodos = async (req, res) => {
 
     res.status(200).json(todo);
   } catch (error) {
-    res.status(400).json({ message: "Something went wrong" });
+   return res.status(400).json({ message: "Something went wrong" });
   }
 };
 
